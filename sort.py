@@ -1,15 +1,15 @@
 
-def merge_sort(array: list) -> list:
-    def _merge_sort(array: list, start: int, end: int) -> list:
+def merge_sort(array: list) -> None:
+    def _merge_sort(array: list, start: int, end: int) -> None:
         if end - start > 0:
             middle = (start + end) // 2
             _merge_sort(array, start, middle)
             _merge_sort(array, middle + 1, end)
             _merge(array, start, middle, end)
-        return array
-    return _merge_sort(array, 0, len(array) - 1)
 
-def _merge(array: list, start: int, middle: int, end: int ):
+    _merge_sort(array, 0, len(array) - 1)
+
+def _merge(array: list, start: int, middle: int, end: int) -> None:
     tmp_arr = []
     ind_1 = start
     ind_2 = middle + 1
