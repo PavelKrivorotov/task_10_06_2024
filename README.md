@@ -24,5 +24,64 @@ def is_even(value) -> bool:
 равен 0 - число чётное, если записана 1, тогда 1 & 1 равняется 1 - число нечётное)*
 
 ### Question 2
+### Написать несколько реализаций циклического буфера FIFO.
+
+*buffer.py*
+```python
+class Item:
+    def __init__(self, value: Any = None) -> None:
+        self.value: Any = value
+        self.next: 'Item' = None
+
+class BaseBuffer:
+    def __init__(self, size: int = 8) -> None:
+        self.size = self._size(size)
+        self.head: Item = None
+        self.tail: Item = None
+
+    def _size(self, size: int) -> int:
+        ...
+    
+    def add(self, value: Any) -> None:
+        pass
+
+    def pop(self) -> None:
+        pass
+
+    def show(self):
+        ...
+
+class Buffer_1(BaseBuffer):
+    def __init__(self, size: int = 8) -> None:
+        super().__init__(size)
+        self.fill: int = 0
+
+    def add(self, value: Any) -> None:
+        ...
+
+    def pop(self) -> None:
+        ...
+
+class Buffer_2(BaseBuffer):
+    def __init__(self, size: int = 8) -> None:
+        super().__init__(size)
+        self.is_empty = True
+        self._set_default()
+
+    def _set_default(self) -> None:
+        ...
+
+    def add(self, value: Any) -> None:
+        ...
+
+    def pop(self) -> Any:        
+        ...
+```
+
+*Подробности:*
+
+`Buffer_1` ...
+
+`Buffer_2` ...
 
 ### Question 3
